@@ -7,6 +7,10 @@ var truckBed = document.querySelector(".truckBed")
 var html=""
 var h5Caption = document.querySelector(".captionh5")
 
+
+var volumeBars = document.querySelectorAll(".volume");
+var volumeCounter = 0;
+
 for(var i=0;i<14;i++){
     html += `<div class='brickRow'>`
     for(let j=0;j<20;j++){
@@ -40,7 +44,7 @@ function driveTruck(){
     }
 }
 
- driveTruck()
+
 
 let hasTurned = false;
 
@@ -78,7 +82,7 @@ function dropTank(){
   
 }
  
- //    dropTank()
+     dropTank()
 
 
  function georgeLeave(){
@@ -128,8 +132,7 @@ function dropTank(){
 
 
 
-var volumeBars = document.querySelectorAll(".volume");
-var volumeCounter = 0;
+
 
 
 
