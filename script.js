@@ -40,7 +40,7 @@ function driveTruck(){
     }
 }
 
-// driveTruck()
+ driveTruck()
 
 let hasTurned = false;
 
