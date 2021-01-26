@@ -6,8 +6,8 @@ var tank = document.querySelector(".taketank");
 var truckBed = document.querySelector(".truckBed")
 var html=""
 var h5Caption = document.querySelector(".captionh5")
-
-
+var jogger = document.querySelector(".jogger")
+var georgeEye = document.querySelector(".eye")
 var volumeBars = document.querySelectorAll(".volume");
 var volumeCounter = 0;
 
@@ -177,6 +177,66 @@ function showVolume(){
     else{
         console.log("all fnctions have fired!")
     }
+}
+
+var hasRunTwice= false;
+
+
+function jog(){
+    let joggerLeft = parseInt(window.getComputedStyle(jogger).getPropertyValue('left'));
+
+    if(joggerLeft > -100){
+        jogger.style.display='block'
+
+        joggerLeft -=25;
+        console.log(joggerLeft)
+        jogger.style.left = `${joggerLeft}px`
+
+        setTimeout(jog,200)
+
+        if(joggerLeft < 110 && joggerLeft > 0){
+            moveEyes()
+        }
+    }
+
+    else{
+        if(!hasRunTwice){
+        jogger.style.display='none'
+        document.querySelector(".chest").style.backgroundColor='violet'
+        document.querySelector(".boob").style.backgroundColor='violet'
+        joggerLeft = 400;
+        jogger.style.left = `${joggerLeft}px`
+
+        setTimeout(jog,200)
+        console.log('jog is done')
+        hasRunTwice = true;
+        }
+        else{
+            console.log('jog is done')
+
+        
+    }
+
+}
+}
+
+jog()
+
+
+function moveEyes(){
+    console.log('moveEyes fired!')
+    let georgeEyeLeft = parseInt(window.getComputedStyle(georgeEye).getPropertyValue('left'));
+        georgeEyeLeft-=2;
+        georgeEye.style.left = `${georgeEyeLeft}px`
+        console.log(georgeEyeLeft)
+
+        if(georgeEyeLeft < 16){
+            georgeEyeLeft = 20;
+            georgeEye.style.left = `${georgeEyeLeft}px`
+            return;
+        }
+
+
 }
 
 
